@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+import { ArrowLeft } from "lucide-react";
 import { RefreshCw } from "lucide-react";
 import backgroundImg from "../assets/img/background-secondary.png";
 import houseImg from "../assets/img/house.png";
 import landImg from "../assets/img/land.png";
+import { useNavigate } from "react-router-dom";
 
 const generatePassword = () => {
   const chars =
@@ -15,6 +17,8 @@ const generatePassword = () => {
 };
 
 const Generator: React.FC = () => {
+  const navigate = useNavigate();
+
   const [passwords, setPasswords] = useState<string[]>([]);
 
   useEffect(() => {
@@ -37,7 +41,14 @@ const Generator: React.FC = () => {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <button
-        className="absolute top-18 right-6 p-3 bg-purple-600 cursor-pointer text-white rounded-full shadow-lg"
+        className="absolute top-18 left-6 p-3 bg-purple-600 cursor-pointer text-white rounded-full shadow-lg hover:bg-gray-700 transition"
+        onClick={() => navigate("/")}
+      >
+        <ArrowLeft size={24} />
+      </button>
+
+      <button
+        className="absolute top-18 right-6 p-3 bg-purple-600 cursor-pointer text-white rounded-full shadow-lg hover:bg-gray-700 transition"
         onClick={regeneratePasswords}
       >
         <RefreshCw size={24} />

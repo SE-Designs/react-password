@@ -63,11 +63,17 @@ const Home: React.FC = () => {
       </div>
 
       {/* Mobile Version */}
-      <div className="absolute top-[120px] -translate-x-1/2 w-[90%] max-w-[400px] lg:hidden">
+      <div
+        className="absolute top-[60px] w-[90%] max-w-[400px] lg:hidden"
+        style={{ left: "50%", transform: "translateX(-50%)" }}
+      >
         {showFirstDialog ? (
           <div className="relative flex flex-col items-center">
             <img src={dialog3} alt="" className="w-full" />
-            <p className="absolute top-12 -translate-x-1/2 w-[65%]">
+            <p
+              className="absolute top-12 w-[65%]"
+              style={{ left: "50%", transform: "translateX(-50%)" }}
+            >
               Сейчас мы узнаем, как защитить свои данные на платформе
               объявлений. Это <strong>важно знать</strong>, чтобы никто не смог
               обмануть или украсть твои данные или деньги. Я буду рядом, чтобы
@@ -75,7 +81,7 @@ const Home: React.FC = () => {
               <strong>Готов(-а)?</strong>
             </p>
             <button
-              className="relative bottom-12 left-30 -translate-x-1/2 bg-purple-600 text-white px-6 py-2 rounded-full cursor-pointer shadow-md hover:bg-purple-700 transition text-lg font-bold transition font-bold"
+              className="absolute bottom-4 right-12 bg-purple-600 text-white px-6 py-2 rounded-full cursor-pointer shadow-md hover:bg-purple-700 transition text-lg font-bold"
               onClick={() => setShowFirstDialog(false)}
             >
               Далее
@@ -84,12 +90,15 @@ const Home: React.FC = () => {
         ) : (
           <div className="relative flex flex-col items-center">
             <img src={dialog3} alt="" className="w-full" />
-            <p className="absolute top-12 -translate-x-1/2 text-2xl w-[65%]">
+            <p
+              className="absolute top-12 text-2xl w-[65%]"
+              style={{ left: "50%", transform: "translateX(-50%)" }}
+            >
               Давай для начала <strong>поможем создать профиль</strong> на
               платформе.
             </p>
             <button
-              className="relative bottom-24 left-30 bg-purple-600 text-white px-6 py-2 rounded-full cursor-pointer shadow-md hover:bg-purple-700 transition text-lg font-bold"
+              className="absolute bottom-4 right-12 bg-purple-600 text-white px-6 py-2 rounded-full cursor-pointer shadow-md hover:bg-purple-700 transition text-lg font-bold"
               onClick={() => navigate("/generator")}
             >
               Начать
